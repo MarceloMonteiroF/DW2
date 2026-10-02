@@ -49,7 +49,7 @@ $alunos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         Editar
                     </a>
 
-                    <a href="" onclick="return confirm('Deseja excluir este aluno?')">
+                    <a href="excluir.php?id=<?= $aluno["id"] ?>" onclick="return confirm('Deseja excluir este aluno?')">
                         Excluir
                     </a>
 
