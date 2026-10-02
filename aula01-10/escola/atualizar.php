@@ -18,3 +18,5 @@
         ":curso" => $curso,
         ":id" => $id
     ]);
+
+    header("Location: index.php");
