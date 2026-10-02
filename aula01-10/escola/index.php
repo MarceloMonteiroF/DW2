@@ -1,12 +1,12 @@
 <?php
-    require_once "conexao.php";
-    $sql = "SELECT * FROM alunos ORDER BY id";
-    $stmt = $pdo->query($sql);
+require_once "conexao.php";
+$sql = "SELECT * FROM alunos ORDER BY id";
+$stmt = $pdo->query($sql);
 
-    $alunos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$alunos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -19,7 +19,7 @@
     <h1>Cadastro de Alunos</h1>
 
     <p>
-        <a href="">
+        <a href="inserir.php">
             <button>Novo Aluno</button>
         </a>
     </p>
@@ -34,39 +34,31 @@
             <th>Ações</th>
         </tr>
 
+        <?php foreach ($alunos as $aluno): ?>
+
 
             <tr>
 
-                <td>
-                                    </td>
+                <td><?= htmlspecialchars($aluno['id']) ?></td>
+                <td><?= htmlspecialchars($aluno['nome']) ?></td>
+                <td><?= htmlspecialchars($aluno['email']) ?></td>
+                <td><?= htmlspecialchars($aluno['curso']) ?></td>
 
                 <td>
-                                    </td>
-
-                <td>
-                                    </td>
-
-                <td>
-                                    </td>
-
-                <td>
-
-                    <a href="">
+                    <a href="editar.php?id=<?= $aluno["id"]?>">
                         Editar
                     </a>
 
-                    |
-
-                    <a href=""
-                       onclick="return confirm('Deseja excluir este aluno?')">
+                    <a href="" onclick="return confirm('Deseja excluir este aluno?')">
                         Excluir
                     </a>
 
                 </td>
 
             </tr>
-
-            </table>
+        <?php endforeach; ?>
+    </table>
 
 </body>
+
 </html>
