@@ -126,3 +126,91 @@ body.login {
     color: #c62828;
     font-weight: bold;
 }
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border: 1px solid #b7c4d1;
+    background: white;
+}
+
+.tabela th,
+.tabela td {
+    border: 1px solid #b7c4d1;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.tabela th {
+    background: #24629a;
+    color: white;
+}
+
+.tabela tbody tr:nth-child(even) {
+    background: #f7fafc;
+}
+
+.btn-editar {
+    padding: 8px 14px;
+    margin-right: 8px;
+}
+
+.btn-excluir {
+    background: #c62828;
+    padding: 8px 14px;
+}
+
+.btn-excluir:hover {
+    background: #8e1b1b;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #00000080;
+    z-index: 1000;
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-caixa {
+    position: relative;
+    width: 420px;
+    max-width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px #00000035;
+}
+
+.modal-caixa h3 {
+    margin-top: 0;
+}
+
+.modal-sucesso {
+    text-align: center;
+}
+
+.modal-sucesso p {
+    margin: 10px 0 25px;
+    font-size: 18px;
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+}

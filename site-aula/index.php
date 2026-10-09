@@ -1,17 +1,25 @@
 <?php
 session_start();
+require_once "conexao.php";
  
 $erro = "";
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
-    $usuario = $_POST["usuario"];
-    $senha = $_POST["senha"];
- 
-    if ($usuario == "aluno" && $senha == "1234") {
- 
-        $_SESSION["usuario"] = $usuario;
- 
+    $usuario = trim($_POST["usuario"] ?? "");
+    $senha = $_POST["senha"] ?? "";
+
+    $sql = "SELECT id_usuario, nome, senha FROM usuarios WHERE nome = :usuario";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(":usuario", $usuario);
+    $stmt->execute();
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($resultado && password_verify($senha, $resultado["senha"])) {
+        $_SESSION["usuario"] = $resultado["nome"];
+        $_SESSION["id_usuario"] = $resultado["id"];
+
         header("Location: inicio.php");
         exit;
  
@@ -54,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                    required>
  
             <button type="submit">Entrar</button>
+            <a href="criarUser.php">Criar novo usuário</a>
  
         </form>
  
