@@ -1,6 +1,6 @@
 <?php
 $host = "Localhost";
-$porta = "3307";
+$porta = "3306";
 $banco = "fatec";
 $usuario = "root";
 $senha = "";

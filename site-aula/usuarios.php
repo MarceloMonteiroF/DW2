@@ -13,7 +13,7 @@ if (!isset($_SESSION["usuario"])) {
 <head>
     <meta charset="UTF-8">
     <title>Início</title>
-    <link rel="stylesheet" href="estilo.css?v=5">
+    <link rel="stylesheet" href="estilo.css?v=6">
 </head>
 <body>
 
@@ -82,7 +82,7 @@ if (!isset($_SESSION["usuario"])) {
                 <label for="editarEmail">Email</label>
                 <input type="email" name="email" id="editarEmail">
 
-                <button type="submit">Salvar alterações</button>
+                <button type="submit" class="btn-editar">Salvar alterações</button>
             </form>
         </div>
     </div>

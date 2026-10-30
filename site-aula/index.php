@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 <meta charset="UTF-8">
 <title>Login - Portal do Aluno</title>
+<?php include "includes/favicon.php" ?>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="login">
